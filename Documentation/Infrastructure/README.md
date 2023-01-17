@@ -10,6 +10,7 @@ $ eb create --> to create inviroment on elasticbeanstalk
 $ eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=12345678 POSTGRES_PORT=5432 POSTGRES_HOST=database-1.cgoepocdldxc.us-east-1.rds.amazonaws.com POSTGRES_DB=postgres AWS_BUCKET="" AWS_REGION=us-east-1 AWS_PROFILE="" JWT_SECRET=mysecretstring URL=http://localhost:4200  --> to set invirement variable
 $ npm run build
 $ eb deploy
+eb init udagram-api --region us-east-1 --platform node.js
 
 ## udagram-api-production.us-east-1.elasticbeanstalk.com
 > - S3 bucket
