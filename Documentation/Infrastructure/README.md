@@ -11,7 +11,7 @@ $ eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=12345678 POSTGRES_PORT=
 $ npm run build
 $ eb deploy
 eb init udagram-api --region us-east-1 --platform node.js
-
+<!-- sg-05f531b8657617a16 -->
 ## udagram-api-production.us-east-1.elasticbeanstalk.com
 > - S3 bucket
 aws s3 cp --recursive --acl public-read ./www s3://udagram-frontend-bucket/
