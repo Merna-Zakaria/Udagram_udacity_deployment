@@ -12,7 +12,7 @@
     "dev": "npx ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && eb init udagram-api --region us-east-1 --platform node.js && eb list && eb use udagram-api-dev && aws ec2 --group-name rds-ec2-3 --description 'My-security-group' && eb deploy && eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=12345678 POSTGRES_PORT=5432 POSTGRES_HOST=database-1.cgoepocdldxc.us-east-1.rds.amazonaws.com POSTGRES_DB=postgres AWS_BUCKET=http://udagram-production.us-east-1.elasticbeanstalk.com/ AWS_REGION=us-east-1 JWT_SECRET=mysecretstring URL=http://localhost:4200",
+    "deploy": "npm run build && eb init udagram-api --region us-east-1 --platform node.js && eb list && eb use udagram-api-dev && aws ec2 security-group-exists --group-ids [sg-05f531b8657617a16] && eb deploy && eb setenv POSTGRES_USERNAME=postgres POSTGRES_PASSWORD=12345678 POSTGRES_PORT=5432 POSTGRES_HOST=database-1.cgoepocdldxc.us-east-1.rds.amazonaws.com POSTGRES_DB=postgres AWS_BUCKET=http://udagram-production.us-east-1.elasticbeanstalk.com/ AWS_REGION=us-east-1 JWT_SECRET=mysecretstring URL=http://localhost:4200",
     "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
