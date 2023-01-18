@@ -21,3 +21,17 @@ are a set of instructions created by CircleCi that allow us to configure the pip
  are groups of commands that we want to run. This is where we will run commands to install, build or deploy our application.
 ## Workflows
  are instructions about the order of the jobs. They allow us to create complex flows and specify manual approvals.
+
+ ## pipeline process
+ A Deployment pipeline is the process of taking code from version control and making it readily available to users of your application in an automated fashion through steps
+ 1- Version Control the first stage of the deployment pipeline is started which triggers:
+    Code compilation
+    Unit tests
+    Code analysis
+    Installer creation
+    If all of these steps complete successfully the executables are assembled into binaries and stored into an artefact repository for later use.
+
+2-  Independent Deployment
+    An independent deployment is the process of deploying the compiled and tested artefacts onto development environments
+3-  Production Deployment
+    deliver the code to live production servers
